@@ -6,10 +6,8 @@ import numpy as np
 
 app = Flask(__name__)
 app.secret_key='abcde'
-from keras.models import load_model
-
-# Load the model using load_model
-model = load_model('models/PCOSwithoutFilterModel.h5')
+import pickle
+model=pickle.load(open('models/pcos_model2.pkl','rb'))
 config = {
   'apiKey': "AIzaSyBbbB-BHOzzwkIpc2bzDHijSAB5Xc2KwP8",
   'authDomain': "precise-valor-300716.firebaseapp.com",
